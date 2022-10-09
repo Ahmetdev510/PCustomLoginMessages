@@ -1,0 +1,86 @@
+PCustomLoginMessages:
+  prefix: '&8[&6PCustomLoginMessages&8]&7'
+  default_message: '&7Sunucuya hoş geldin, &6%player%&7!'
+  Messages:
+    noPermission: '{prefix} &cBu komutu kullanma izniniz yok.'
+    reload: '{prefix} &aYapılandrma yeniden yüklendi.'
+    PlayerNotFound: '{prefix} &cOyuncu bulunamadı.'
+    Gived: '{prefix} &a{player} oyuncusuna {message} giriş mesajı verildi.'
+    NotGived: '{prefix} &c{player} oyuncusuna {message} giriş mesajı verilemedi.'
+    Taked: '{prefix} &a{player} oyuncusundan {message} giriş mesajı alındı.'
+    NotTaked: '{prefix} &c{player} oyuncusunun {message} giriş mesajı alınamadı.'
+    Active: '{prefix} &a{message} etkinleştirildi.'
+    DisabledActive: '{prefix} &c{message} devre dışı bırakıldı.'
+    Reset: '{prefix} &a{player} sıfırlandı.'
+    Help:
+      - '&8&m----------------------'
+      - '&6PCustomLoginMessages &7Yardım'
+      - '&8&m----------------------'
+      - '&6/pclm loginmessage give <player> <message> &7- &eBir oyuncuya giriş mesajı verir.'
+      - '&6/pclm loginmessage take <player> <message> &7- &eBir oyuncudan giriş mesajı alır.'
+      - '&6/pclm reset <player> &7- &eBir oyuncunun giriş mesajlarını sıfırlar.'
+      - '&6/pclm reload &7- &eYapılandırmayı yeniden yükler.'
+      - '&8&m----------------------'
+  Permissions:
+    reload: pclm.reload
+    give: pclm.loginmessage.give
+    take: pclm.loginmessage.take
+    reset: pclm.reset
+    open_command: pclm.open
+  mysql:
+    enabled: false
+    host: 'localhost'
+    port: 3306
+    database: 'database'
+    username: 'root'
+    password: ''
+    table: 'messages'
+  GUI:
+    open_command:
+      - girismesaj
+    menu_title: '&c&lGiriş Mesajları (Sayfa {currentPage}/{maxPage})'
+    PrevPage: '&a&l← Önceki sayfa'
+    PrevPageLore: '&7Önceki sayfaya gitmek için tıklayın ({page})'
+    PrevPageMaterial: 'ARROW'
+    CurrentPage: '&7&lSayfa: {page} of {maxPage}'
+    CurrentPageLore: '&7&lŞu anda {page} sayfasındasınız'
+    CurrentPageMaterial: 'NAME_TAG'
+    NextPage: '&a&lSonraki Sayfa →'
+    NextPageLore: '&7Sonraki sayfaya gitmek için tıklayın ({nextPage})'
+    NextPageMaterial: 'ARROW'
+    items:
+      ziplayarakgiris:
+        message: "&3SunucuAdı ➤ &b%player% &eoyuna &6zıplayarak &egiriş yaptı!"
+        page: 0
+        slot: 10
+        active:
+          material: DIAMOND_BLOCK
+          display_name: '&aZıplayarak Giriş'
+          lore:
+            - ""
+            - " &8* &7Önizleme:"
+            - " {prefix} %player% &eoyuna zıplayarak giriş yaptı."
+            - ""
+            - " &7Durum: &aAçık"
+            - ""
+            - " &c&nKapatmak için tıkla."
+        passive:
+          material: REDSTONE_BLOCK
+          display_name: '&aZıplayarak Giriş'
+          lore:
+            - ""
+            - " &8* &7Önizleme:"
+            - " {prefix} %player% &eoyuna zıplayarak giriş yaptı."
+            - ""
+            - " &7Durum: &cKapalı"
+            - ""
+            - " &a&nSeçmek için tıkla."
+        no_access:
+          material: BARRIER
+          display_name: '&aZıplayarak Giriş'
+          lore:
+            - ""
+            - " &8* &7Önizleme:"
+            - " {prefix} %player% &eoyuna zıplayarak giriş yaptı."
+            - ""
+            - " &7Durum: &4Kilitli"

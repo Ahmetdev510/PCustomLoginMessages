@@ -1,0 +1,9 @@
+name: PCustomLoginMessages
+version: 1.0.0
+main: me.ahmetdev510.PCustomLoginMessages
+author: AhmetDev510
+description: A plugin that allows you to customize the login messages of your players.
+commands:
+  pclm:
+    description: Main command of the plugin.
+    usage: /pclm <reload|give|take>
